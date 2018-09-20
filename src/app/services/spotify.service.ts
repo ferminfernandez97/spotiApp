@@ -15,13 +15,13 @@ export class SpotifyService {
     console.log('Servicio spotify listo');
   }
 
-  getArtistas(){
+  getArtistas(termino:string){
 
-    let url = 'https://api.spotify.com/v1/search?query=Nacho&type=artist&offset=0&limit=10'
+    let url = `https://api.spotify.com/v1/search?query=${termino}&type=artist&offset=0&limit=10`
 
     let headers = new HttpHeaders(
       {
-        'authorization': 'Bearer BQDVBeHhbvOYLrsbTTdBlqJZwgN_KfOKtQSa6Ac3GNl9nIYcmlFms0QgLsOSClxJAkrBuKNCS8h6h3BicEw'
+        'authorization': 'Bearer BQD6K4t5cKLtdy7WfYg37d5m3YrtCzzwTy7OHNMC7VzwY1BPywk__V7V9oy70-CEnhhZE1P4RxI2o5YCdpM'
       }
     );
 
