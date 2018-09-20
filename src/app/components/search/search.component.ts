@@ -11,9 +11,10 @@ export class SearchComponent {
 
   constructor(public _spotify: SpotifyService) {
 
-    this._spotify.getArtistas().subscribe(resp => {
+    this._spotify.getArtistas()
+         .subscribe(artistas => {
             
-      console.log(resp);
+      console.log(artistas);
       console.log('Informacion lista');
 
 
