@@ -14,18 +14,26 @@
     </div>
     
     <div class="col-md-9" *ngIf="termino.length > 1">
-      <h1>{{ termino }}</h1>
+      <h1 class="text-capitalize">{{ termino }}</h1>
       <hr>
 
-      <ul>
-        <li *ngFor="let artista of _spotify.artistas">
-          {{ artista.name }}
-          
-        </li>
+      <!--*n gFor="let artista of _spotify.artistas-->
+      <div class="row"> 
 
-      </ul>
-      
-    </div>
+        <div *ngFor="let artista of _spotify.artistas"
+              class="col-md-3 text-center puntero">
+              
+            <img [src]="artista.images | sinfoto" class="img-thumbnail">
+
+            <p>
+              {{ artista.name }}
+            </p>
+                  
+        </div>
+
+      </div>
+
+     </div>
 
 
   </div>
