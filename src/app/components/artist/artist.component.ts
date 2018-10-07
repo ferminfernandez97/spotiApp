@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from '../../services/spotify.service';
 import { map } from 'rxjs/operators';
 
-
+    
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
@@ -12,6 +12,10 @@ import { map } from 'rxjs/operators';
 export class ArtistComponent implements OnInit {
 
 artista: any = {};
+toptracks:any[] = [];
+
+
+
 
   constructor(private activatedRoute: ActivatedRoute,
               public _spotify: SpotifyService) { }
@@ -28,6 +32,13 @@ artista: any = {};
                              console.log(artista);
                              this.artista = artista;
                            });
+
+              this._spotify.getTop(id)
+                           .pipe(map( (resp:any) => resp.tracks))
+                           .subscribe( tracks => {
+                            console.log(tracks);
+                            this.toptracks = tracks;
+                          });
 
             })
 

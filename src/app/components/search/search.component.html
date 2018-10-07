@@ -20,6 +20,17 @@
       <!--*n gFor="let artista of _spotify.artistas-->
       <div class="row"> 
 
+<!--
+          <div *ngFor="let artista of _spotify.artistas"
+                class="card col-md-3 text-center puntero" style="width: 18rem;"
+                [routerLink]="['/artist', artista.id]">
+
+              <img class="card-img-top" [src]="artista.images | sinfoto" alt="Card image cap img-thumbnail">
+              <div class="card-body">
+                <p class="card-text">{{ artista.name }}</p>
+              </div>
+            </div>
+   -->
         <div *ngFor="let artista of _spotify.artistas"
               class="col-md-3 text-center puntero"
               [routerLink]="['/artist', artista.id]">
@@ -31,7 +42,7 @@
             </p>
                   
         </div>
-
+    
       </div>
 
      </div>
